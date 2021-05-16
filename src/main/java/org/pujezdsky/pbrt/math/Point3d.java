@@ -70,6 +70,14 @@ public class Point3d {
         return multiply(1 - t).add(p.multiply(t));
     }
 
+    public Point3d lerp(Point3d t, Point3d p) {
+        return new Point3d(
+                MyMath.lerp(t.x, x, p.x),
+                MyMath.lerp(t.y, y, p.y),
+                MyMath.lerp(t.y, y, p.y)
+        );
+    }
+
     public Point3d min(Point3d p) {
         return new Point3d(
                 Math.min(x, p.x),

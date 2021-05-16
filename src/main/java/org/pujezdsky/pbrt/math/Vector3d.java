@@ -9,9 +9,9 @@ public class Vector3d {
     public static final Vector3d E2 = new Vector3d(0, 1, 0);
     public static final Vector3d E3 = new Vector3d(0, 0, 1);
 
-    public final double x;
-    public final double y;
-    public final double z;
+    public double x;
+    public double y;
+    public double z;
 
     public Vector3d() {
         this(0, 0, 0);
