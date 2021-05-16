@@ -1,5 +1,7 @@
 package org.pujezdsky.pbrt.math;
 
+import java.util.Objects;
+
 public class Point3d {
 
     public final double x;
@@ -112,5 +114,23 @@ public class Point3d {
 
     public Point3d permute(int x, int y, int z) {
         return new Point3d(get(x), get(y), get(z));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point3d point3d = (Point3d) o;
+        return Double.compare(point3d.x, x) == 0 && Double.compare(point3d.y, y) == 0 && Double.compare(point3d.z, z) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y, z);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("x=%f, y=%f, z=%f", x, y, z);
     }
 }

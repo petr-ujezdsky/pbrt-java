@@ -125,6 +125,10 @@ public class Vector3d {
         return new Vector3d(get(x), get(y), get(z));
     }
 
+    public Vector3d faceForward(Vector3d v) {
+        return dot(v) < 0 ? negate() : this;
+    }
+
     public static Vector3d min(Vector3d v, Vector3d w) {
         return new Vector3d(
                 Math.min(v.x, w.x),

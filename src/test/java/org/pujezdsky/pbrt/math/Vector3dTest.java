@@ -7,6 +7,58 @@ import static junit.framework.TestCase.assertEquals;
 public class Vector3dTest {
 
     @Test
+    public void testConstructor0() {
+        Vector3d v = new Vector3d();
+
+
+        assertEquals(0.0, v.x);
+        assertEquals(0.0, v.y);
+        assertEquals(0.0, v.z);
+    }
+
+    @Test
+    public void testConstructor1() {
+        Vector3d v = new Vector3d(1, 2, 3);
+
+
+        assertEquals(1.0, v.x);
+        assertEquals(2.0, v.y);
+        assertEquals(3.0, v.z);
+    }
+
+    @Test
+    public void testConstructor2() {
+        Vector3d v = new Vector3d(new Vector3d(1, 2, 3));
+
+
+        assertEquals(1.0, v.x);
+        assertEquals(2.0, v.y);
+        assertEquals(3.0, v.z);
+    }
+
+    @Test
+    public void testEquals() {
+        Vector3d v1 = new Vector3d(1, 2, 3);
+        Vector3d v2 = new Vector3d(1, 2, 3);
+
+        assertEquals(v1, v2);
+    }
+
+    @Test
+    public void testHashCode() {
+        Vector3d v = new Vector3d(1, 2, 3);
+
+        assertEquals(66614367, v.hashCode());
+    }
+
+    @Test
+    public void testToString() {
+        Vector3d v = new Vector3d(1, 2, 3);
+
+        assertEquals("x=1,000000, y=2,000000, z=3,000000", v.toString());
+    }
+
+    @Test
     public void testGetLength() {
         assertEquals(3.7416573867739413, new Vector3d(1, 2, 3).getLength());
         assertEquals(1.0, new Vector3d(1, 0, 0).getLength());
@@ -193,5 +245,17 @@ public class Vector3dTest {
         assertEquals(3.0, permute.x);
         assertEquals(1.0, permute.y);
         assertEquals(8.0, permute.z);
+    }
+
+    @Test
+    public void testFaceForward() {
+        Vector3d v = new Vector3d(-1, -8, -3);
+        Vector3d w = new Vector3d(1, 8, 3);
+
+        Vector3d res = v.faceForward(w);
+
+        assertEquals(1.0, res.x);
+        assertEquals(8.0, res.y);
+        assertEquals(3.0, res.z);
     }
 }

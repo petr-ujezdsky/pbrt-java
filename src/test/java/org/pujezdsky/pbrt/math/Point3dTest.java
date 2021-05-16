@@ -7,6 +7,67 @@ import static junit.framework.TestCase.assertEquals;
 public class Point3dTest {
 
     @Test
+    public void testConstructor0() {
+        Point3d p = new Point3d();
+
+
+        assertEquals(0.0, p.x);
+        assertEquals(0.0, p.y);
+        assertEquals(0.0, p.z);
+    }
+
+    @Test
+    public void testConstructor1() {
+        Point3d p = new Point3d(1, 2, 3);
+
+
+        assertEquals(1.0, p.x);
+        assertEquals(2.0, p.y);
+        assertEquals(3.0, p.z);
+    }
+
+    @Test
+    public void testConstructor2() {
+        Point3d p = new Point3d(new Point3d(1, 2, 3));
+
+
+        assertEquals(1.0, p.x);
+        assertEquals(2.0, p.y);
+        assertEquals(3.0, p.z);
+    }
+
+    @Test
+    public void testConstructor3() {
+        Point3d p = new Point3d(new Vector3d(1, 2, 3));
+
+
+        assertEquals(1.0, p.x);
+        assertEquals(2.0, p.y);
+        assertEquals(3.0, p.z);
+    }
+
+    @Test
+    public void testEquals() {
+        Point3d p1 = new Point3d(1, 2, 3);
+        Point3d p2 = new Point3d(1, 2, 3);
+
+        assertEquals(p1, p2);
+    }
+
+    @Test
+    public void testHashCode() {
+        Point3d p = new Point3d(1, 2, 3);
+
+        assertEquals(66614367, p.hashCode());
+    }
+
+    @Test
+    public void testToString() {
+        Point3d p = new Point3d(1, 2, 3);
+
+        assertEquals("x=1,000000, y=2,000000, z=3,000000", p.toString());
+    }
+    @Test
     public void testAddVector() {
         Point3d p = new Point3d(1, 2, 3);
 
