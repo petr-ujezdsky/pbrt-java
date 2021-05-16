@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class Point3d {
 
+    public static final Point3d EMPTY = new Point3d(0, 0, 0);
+
     public final double x;
     public final double y;
     public final double z;
