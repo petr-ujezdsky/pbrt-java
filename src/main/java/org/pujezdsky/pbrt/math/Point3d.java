@@ -74,7 +74,7 @@ public class Point3d {
         return new Point3d(
                 MyMath.lerp(t.x, x, p.x),
                 MyMath.lerp(t.y, y, p.y),
-                MyMath.lerp(t.y, y, p.y)
+                MyMath.lerp(t.z, z, p.z)
         );
     }
 

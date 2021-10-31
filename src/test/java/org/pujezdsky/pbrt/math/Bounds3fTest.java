@@ -227,4 +227,16 @@ public class Bounds3fTest {
                         new Point3d(1, 1, 5)
                 ).maximumExtent());
     }
+
+    @Test
+    public void testLerp() {
+        Bounds3f b1 = new Bounds3f(
+                new Point3d(1, 2, 3),
+                new Point3d(5, 6, 7)
+        );
+
+        assertEquals(new Point3d(1, 2, 3), b1.lerp(new Point3d(0, 0, 0)));
+        assertEquals(new Point3d(5, 6, 7), b1.lerp(new Point3d(1, 1, 1)));
+        assertEquals(new Point3d(3, 4, 5), b1.lerp(new Point3d(0.5, 0.5, 0.5)));
+    }
 }

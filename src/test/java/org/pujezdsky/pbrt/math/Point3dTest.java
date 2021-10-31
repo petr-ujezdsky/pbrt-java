@@ -152,6 +152,19 @@ public class Point3dTest {
     }
 
     @Test
+    public void testLerpPoint() {
+        Point3d p = new Point3d(1, 2, 3);
+
+        Point3d res = p.lerp(
+                new Point3d(0.5, 0.5, 0.5),
+                new Point3d(5, 6, 7));
+
+        assertEquals(3.0, res.x);
+        assertEquals(4.0, res.y);
+        assertEquals(5.0, res.z);
+    }
+
+    @Test
     public void testMin() {
         Point3d p1 = new Point3d(1, 8, 3);
         Point3d p2 = new Point3d(4, 5, 6);
