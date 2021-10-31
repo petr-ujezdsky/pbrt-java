@@ -239,4 +239,16 @@ public class Bounds3fTest {
         assertEquals(new Point3d(5, 6, 7), b1.lerp(new Point3d(1, 1, 1)));
         assertEquals(new Point3d(3, 4, 5), b1.lerp(new Point3d(0.5, 0.5, 0.5)));
     }
+
+    @Test
+    public void testOffset() {
+        Bounds3f b1 = new Bounds3f(
+                new Point3d(1, 2, 3),
+                new Point3d(5, 6, 7)
+        );
+
+        assertEquals(new Vector3d(0, 0, 0), b1.offset(new Point3d(1, 2, 3)));
+        assertEquals(new Vector3d(1, 1, 1), b1.offset(new Point3d(5, 6, 7)));
+        assertEquals(new Vector3d(0.5, 0.5, 0.5), b1.offset(new Point3d(3, 4, 5)));
+    }
 }

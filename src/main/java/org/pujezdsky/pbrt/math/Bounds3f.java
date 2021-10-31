@@ -104,19 +104,11 @@ public class Bounds3f {
 
     public Vector3d offset(Point3d p) {
         Vector3d o = p.subtract(pMin);
-//        double x = o.x;
-//        double y = o.y;
-//        double z = o.z;
-//
-//        if (pMax.x > pMin.x) x /= pMax.x - pMin.x;
-//        if (pMax.y > pMin.y) y /= pMax.y - pMin.y;
-//        if (pMax.z > pMin.z) z /= pMax.z - pMin.z;
-//
-//        return new Vector3d(x, y, z);
 
         if (pMax.x > pMin.x) o.x /= pMax.x - pMin.x;
         if (pMax.y > pMin.y) o.y /= pMax.y - pMin.y;
         if (pMax.z > pMin.z) o.z /= pMax.z - pMin.z;
+
         return o;
     }
 
