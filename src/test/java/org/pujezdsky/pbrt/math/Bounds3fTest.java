@@ -251,4 +251,17 @@ public class Bounds3fTest {
         assertEquals(new Vector3d(1, 1, 1), b1.offset(new Point3d(5, 6, 7)));
         assertEquals(new Vector3d(0.5, 0.5, 0.5), b1.offset(new Point3d(3, 4, 5)));
     }
+
+    @Test
+    public void testBoundingSphere() {
+        Bounds3f b1 = new Bounds3f(
+                new Point3d(1, 2, 3),
+                new Point3d(5, 6, 7)
+        );
+
+        BoundingSphere res = b1.boundingSphere();
+
+        assertEquals(new Point3d(3, 4, 5), res.center);
+        assertEquals(3.4641016151377544, res.radius);
+    }
 }
