@@ -66,9 +66,11 @@ public class Bounds3f {
     }
 
     public Bounds3f expand(double delta) {
+        Vector3d vDelta = new Vector3d(delta, delta, delta);
+
         return new Bounds3f(
-                pMin.subtract(new Vector3d(delta, delta, delta)),
-                pMax.add(new Vector3d(delta, delta, delta))
+                pMin.subtract(vDelta),
+                pMax.add(vDelta)
         );
     }
 

@@ -141,7 +141,6 @@ public class Bounds3fTest {
         assertTrue(b1.inside(new Point3d(0, 0, 0)));
         assertTrue(b1.inside(new Point3d(1, 1, 1)));
         assertTrue(b1.inside(new Point3d(0.5, 0.5, 0.5)));
-        assertTrue(b1.inside(new Point3d(0.5, 0.5, 0.5)));
         assertFalse(b1.inside(new Point3d(2, 2, 2)));
     }
 
